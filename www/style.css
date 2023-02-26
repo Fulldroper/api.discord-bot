@@ -1,0 +1,57 @@
+#app > div {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+#app > div > div {
+  margin: 20px;
+}
+
+#app > div > div, #app > div > div > div  {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#app > div > div > img {
+  width: 150px;
+  height: 75px;
+  border-radius: 20px;
+  border: rgba(0, 0, 0, 0) solid 1px;
+}
+
+#app > div > div > div > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+#app > div > div > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.containers {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  flex-direction: column !important;
+  width: 300px !important;
+  max-height: 600px;
+  overflow: auto;
+}
+.container > div {
+  margin: 5px;
+  background-color: #9fb9d0;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+a, .container > div  {
+  cursor: pointer;
+}

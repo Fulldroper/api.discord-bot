@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./app/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./app/style.css">
+    <script src="./app/axios.min.js"></script>
+    <script src="./app/vue.js"></script>
+    <script src="./app/script.js"></script>
+    <title>Bot client</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-for="guild in guilds" :key="guild" :ref="guild.id">
+          <!-- {{ guild }} -->
+          <div>
+            <div>
+              <img :src=guild.iconURL alt="icon">
+              <div>
+                <h1>
+                  <a @click="showGuildChannels(guild.id)">{{ guild.name }}</a>
+                </h1>
+                <div>{{ guild.description }}</div>
+                <h6>створенно {{new Date(guild.createdTimestamp).toLocaleDateString('uk')}} {{ guild.memberCount }} користувачів, {{guild?.channels?.length || 'x'}} каналів, {{guild?.roles?.length || 'x'}} ролей</h6>
+              </div>
+            </div>
+            <img :src=guild.bannerURL alt="">
+          </div>
+          <div class="containers">
+            <div @click="showChannelMessages" class="container channels"></div>
+            <div class="container messages"></div>
+          </div>
+          <!-- <p>id: {{ guild.id }}</p> -->
+      </div>
+    </div>
+  </body>
+</html>
